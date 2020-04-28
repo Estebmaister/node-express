@@ -15,6 +15,14 @@ git push -u origin master
 
 Adding the files from the original repo in FCC and start to coding.
 
+## Scripts
+
+To install all the dependencies :
+
+```npm
+npm install
+```
+
 ## Challenges
 
-* console.log("Hello World") in myApp.js
+- console.log("Hello World") in myApp.js
