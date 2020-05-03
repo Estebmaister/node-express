@@ -31,7 +31,7 @@ During the development process, it is important to be able to check what’s goi
 
 We recommend to keep the log panel open while working at these challenges. By reading the logs, you can be aware of the nature of errors that may occur.
 
-- Added `console.log("Hello World")` in myApp.js
+- Added `console.log("Hello World")` to myApp.js.
 
 ### 2. Start a Working Express Server
 
@@ -48,6 +48,8 @@ function(req, res) {
 ```
 
 will serve the string 'Response String'.
+
+- Added `app.get("/", function(req, res) {res.send('Hello Express');})` to myApp.js.
 
 ### 3. Serve an HTML File
 
