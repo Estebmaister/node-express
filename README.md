@@ -23,6 +23,12 @@ To install all the dependencies :
 npm install
 ```
 
+To run the server
+
+```node
+node server.js
+```
+
 ## Challenges
 
 ### 1. Meet the Node console
