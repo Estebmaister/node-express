@@ -59,14 +59,12 @@ You can respond to requests with a file using the `res.sendFile(path)` method. Y
 absolutePath = __dirname + relativePath / file.ext;
 ```
 
-Send the `/views/index.html` file as a response to GET requests to the `/` path. If you view your live app, you should see a big HTML heading (and a form that we will use later…), with no style applied.
-
-Note: You can edit the solution of the previous challenge or create a new one. If you create a new solution, keep in mind that Express evaluates routes from top to bottom, and executes the handler for the first match. You have to comment out the preceding solution, or the server will keep responding with a string.
+- Changed handler `app.get("/", function(req, res) {res.sendFile(__dirname + "/views/index.html");})` in myApp.js.
 
 ### 4. Serve Static Assets
 
 An HTML server usually has one or more directories that are accessible by the user. You can place there the static assets needed by your application (stylesheets, scripts, images). In Express, you can put in place this functionality using the middleware `express.static(path)`, where the `path` parameter is the absolute path of the folder containing the assets. If you don’t know what middleware is... don’t worry, we will discuss in detail later. Basically, middleware are functions that intercept route handlers, adding some kind of information. A middleware needs to be mounted using the method `app.use(path, middlewareFunction)`. The first `path` argument is optional. If you don’t pass it, the middleware will be executed for all requests.
 
-```
+- Added `app.use("/",express.static(__dirname + "/public" ))` to myApp.js.
 
-```
+### 5.

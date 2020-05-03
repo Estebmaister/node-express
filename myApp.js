@@ -25,6 +25,8 @@ app.get("/", function (req, res) {
 
 /** 4) Serve static assets  */
 
+app.use("/", express.static(__dirname + "/public"));
+
 /** 5) serve JSON on a specific route */
 
 /** 6) Use the .env file to configure the app */
