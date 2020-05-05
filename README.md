@@ -1,6 +1,10 @@
 ## Backend Challenges Boilerplate - Basic Express
 
-Created from the FCC repository
+![GitHub package.json version](https://img.shields.io/github/package-json/v/estebmaister/boilerplate-express?color=blue&style=plastic&logo=github) ![GitHub package.json dependency version express](https://img.shields.io/github/package-json/dependency-version/estebmaister/boilerplate-express/express?style=plastic&logo=express) ![License](https://img.shields.io/github/license/estebmaister/boilerplate-express) [![Twitter Follow](https://img.shields.io/twitter/follow/estebmaister?label=Follow&style=social)](https://twitter.com/estebmaister)
+
+Created from the FCC repository, to compile the lessons about node and express.
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F31OD9K)
 
 Start with an empty repository and making the git init as follows:
 
