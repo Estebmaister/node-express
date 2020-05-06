@@ -3,6 +3,12 @@ var app = express();
 
 // --> 7)  Mount the Logger middleware here
 
+app.use("/", function (req, res, next) {
+  const { method, path, ip } = req;
+  console.log(`${method} ${path} - ${ip}`);
+  next();
+});
+
 // --> 11)  Mount the body-parser middleware  here
 
 /** 1) Meet the node console. */
@@ -34,11 +40,6 @@ app.use("/", express.static(__dirname + "/public"));
 
 /** 6) Use the .env file to configure the app */
 
-console.log("process.env.MESSAGE_STYLE");
-console.log(typeof process.env.MESSAGE_STYLE);
-console.log(process.env.MESSAGE_STYLE);
-console.log("uppercase");
-console.log(process.env.MESSAGE_STYLE === "uppercase");
 message = "Hello json";
 
 if (process.env.MESSAGE_STYLE === "uppercase") {
@@ -51,6 +52,8 @@ app.get("/json", function (req, res) {
 
 /** 7) Root-level Middleware - A logger */
 //  place it before all the routes !
+
+console.log("Middleware logger active");
 
 /** 8) Chaining middleware. A Time server */
 
