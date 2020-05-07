@@ -113,7 +113,7 @@ For Linux Mac or Windows after install **cross-env**, or `npx node-env-run serve
 
 Another possible choice is **dotenv** with an extra line the code: `require('dotenv').config();` at the top of your `js` for load all the variables in `.env`.
 
-### 7.Implement a Root-Level Request Logger Middleware
+### 7. Implement a Root-Level Request Logger Middleware
 
 Earlier, you were introduced to the `express.static()` middleware function. Now it’s time to see what middleware is, in more detail. Middleware functions are functions that take 3 arguments: the request object, the response object, and the next function in the application’s request-response cycle. These functions execute some code that can have side effects on the app, and usually add information to the request or response objects. They can also end the cycle by sending a response when some condition is met. If they don’t send the response when they are done, they start the execution of the next function in the stack. This triggers calling the 3rd argument, `next()`.
 
@@ -127,3 +127,41 @@ function(req, res, next) {
 ```
 
 Let’s suppose you mounted this function on a route. When a request matches the route, it displays the string “I’m a middleware…”, then it executes the next function in the stack. In this exercise, you are going to build root-level middleware. As you have seen in challenge 4, to mount a middleware function at root level, you can use the `app.use(<mware-function>)` method. In this case, the function will be executed for all the requests, but you can also set more specific conditions. For example, if you want a function to be executed only for POST requests, you could use `app.post(<mware-function>)`. Analogous methods exist for all the HTTP verbs (GET, DELETE, PUT, …).
+
+### 8. Chain Middleware to Create a Time Server
+
+Middleware can be mounted at a specific route using app.METHOD(path, middlewareFunction). Middleware can also be chained inside route definition.
+
+Look at the following example:
+
+```node
+app.get(
+  "/user",
+  function (req, res, next) {
+    req.user = getTheUserSync(); // Hypothetical synchronous operation
+    next();
+  },
+  function (req, res) {
+    res.send(req.user);
+  }
+);
+```
+
+This approach is useful to split the server operations into smaller units. That leads to a better app structure, and the possibility to reuse code in different places. This approach can also be used to perform some validation on the data. At each point of the middleware stack you can block the execution of the current chain and pass control to functions specifically designed to handle errors. Or you can pass control to the next matching route, to handle special cases. We will see how in the advanced Express section.
+
+- Added the following code to myApp.js:
+
+```node
+app.get(
+  "/now",
+  function (req, res, next) {
+    req.time = new Date().toString();
+    next();
+  },
+  function (req, res) {
+    res.json({ time: req.time });
+  }
+);
+```
+
+### 9.
