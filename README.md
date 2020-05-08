@@ -130,13 +130,13 @@ Let’s suppose you mounted this function on a route. When a request matches the
 
 - Added this code to the beginning of the myApp.js file:
 
-`````node
+```node
 app.use("/", function (req, res, next) {
   const { method, path, ip } = req;
   console.log(`${method} ${path} - ${ip}`);
   next();
 });
-````
+```
 
 ### 8. Chain Middleware to Create a Time Server
 
@@ -174,5 +174,20 @@ app.get(
 );
 ```
 
-### 9.
-`````
+### 9. Get Route Parameter Input from the Client
+
+When building an API, we have to allow users to communicate to us what they want to get from our service. For example, if the client is requesting information about a user stored in the database, they need a way to let us know which user they're interested in. One possible way to achieve this result is by using route parameters. Route parameters are named segments of the URL, delimited by slashes (/). Each segment captures the value of the part of the URL which matches its position. The captured values can be found in the `req.params` object.
+
+```node
+route_path: '/user/:userId/book/:bookId'
+actual_request_URL: '/user/546/book/6754'
+req.params: {userId: '546', bookId: '6754'}
+```
+
+- Added the following line of code to myApp.js:
+
+```node
+app.get("/:word/echo", (req, res) => res.json({ echo: req.params.word }));
+```
+
+### 10.
