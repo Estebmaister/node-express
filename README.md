@@ -190,4 +190,40 @@ req.params: {userId: '546', bookId: '6754'}
 app.get("/:word/echo", (req, res) => res.json({ echo: req.params.word }));
 ```
 
-### 10.
+### 10. Get Query Parameter Input from the Client
+
+Another common way to get input from the client is by encoding the data after the route path, using a query string. The query string is delimited by a question mark (?), and includes field=value couples. Each couple is separated by an ampersand (&). Express can parse the data from the query string, and populate the object req.query. Some characters, like the percent (%), cannot be in URLs and have to be encoded in a different format before you can send them. If you use the API from JavaScript, you can use specific methods to encode/decode these characters.
+
+```node
+route_path: '/library'
+actual_request_URL: '/library?userId=546&bookId=6754'
+req.query: {userId: '546', bookId: '6754'}
+```
+
+- Added to myApp.js:
+
+```node
+app
+  .route("/name")
+  .get((req, res) => res.json({ name: `${req.query.first} ${req.query.last}` }))
+  .post();
+```
+
+### 11. Use body-parser to Parse POST Requests
+
+Besides GET, there is another common HTTP verb, it is POST. POST is the default method used to send client data with HTML forms. In REST convention, POST is used to send data to create new items in the database (a new user, or a new blog post). You don’t have a database in this project, but you are going to learn how to handle POST requests anyway.
+
+In these kind of requests, the data doesn’t appear in the URL, it is hidden in the request body. This is a part of the HTML request, also called payload. Since HTML is text-based, even if you don’t see the data, it doesn’t mean that it is secret. The raw content of an HTTP POST request is shown below:
+
+```http
+POST /path/subpath HTTP/1.0
+From: john@example.com
+User-Agent: someBrowser/1.0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 20
+name=John+Doe&age=25
+```
+
+As you can see, the body is encoded like the query string. This is the default format used by HTML forms. With Ajax, you can also use JSON to handle data having a more complex structure. There is also another type of encoding: multipart/form-data. This one is used to upload binary files. In this exercise, you will use a urlencoded body. To parse the data coming from POST requests, you have to install the `body-parser` package. This package allows you to use a series of middleware, which can decode data in different formats.
+
+-
