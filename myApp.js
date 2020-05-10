@@ -1,5 +1,5 @@
-var express = require("express");
-var app = express();
+const express = require("express");
+const app = express();
 
 // --> 7)  Mount the Logger middleware here
 
@@ -10,6 +10,10 @@ app.use("/", function (req, res, next) {
 });
 
 // --> 11)  Mount the body-parser middleware  here
+
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 /** 1) Meet the node console. */
 
@@ -82,6 +86,8 @@ app
 
 /** 11) Get ready for POST Requests - the `body-parser` */
 // place it before all the routes !
+
+console.log("Body parser activated");
 
 /** 12) Get data form POST  */
 

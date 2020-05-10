@@ -226,4 +226,6 @@ name=John+Doe&age=25
 
 As you can see, the body is encoded like the query string. This is the default format used by HTML forms. With Ajax, you can also use JSON to handle data having a more complex structure. There is also another type of encoding: multipart/form-data. This one is used to upload binary files. In this exercise, you will use a urlencoded body. To parse the data coming from POST requests, you have to install the `body-parser` package. This package allows you to use a series of middleware, which can decode data in different formats.
 
--
+- Installed `body-parser` module in `package.json`.
+- Added `const bodyParser = require("body-parser")` to the top of myApp.js file.
+- Added the following code to myApp.js: `app.use(bodyParser.urlencoded({ extended: false }));`
