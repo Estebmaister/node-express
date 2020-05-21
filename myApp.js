@@ -78,7 +78,7 @@ app.get("/:word/echo", (req, res) => res.json({ echo: req.params.word }));
 
 /** 10) Get input from client - Query parameters */
 // /name?first=<firstname>&last=<lastname>
-
+/** 12) Get data form POST  */
 app
   .route("/name")
   .get((req, res) => res.json({ name: `${req.query.first} ${req.query.last}` }))
@@ -88,8 +88,6 @@ app
 // place it before all the routes !
 
 console.log("Body parser activated");
-
-/** 12) Get data form POST  */
 
 // This would be part of the basic setup of an Express app
 // but to allow FCC to run tests, the server is already active
