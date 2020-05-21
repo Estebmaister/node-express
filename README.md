@@ -1,20 +1,16 @@
-## Backend Challenges Boilerplate - Basic Express
+# Backend Challenges Boilerplate - Basic Express
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/estebmaister/boilerplate-express?color=blue&style=plastic&logo=github) ![GitHub package.json dependency version express](https://img.shields.io/github/package-json/dependency-version/estebmaister/boilerplate-express/express?style=plastic&logo=express) ![License](https://img.shields.io/github/license/estebmaister/boilerplate-express) [![Twitter Follow](https://img.shields.io/twitter/follow/estebmaister?label=Follow&style=social)](https://twitter.com/estebmaister)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/estebmaister/boilerplate-express?color=blue&style=plastic&logo=github) ![GitHub package.json dependency version express](https://img.shields.io/github/package-json/dependency-version/estebmaister/boilerplate-express/express?style=plastic&logo=express) ![License](https://img.shields.io/github/license/estebmaister/boilerplate-express?style=plastic) [![Twitter Follow](https://img.shields.io/twitter/follow/estebmaister?label=Follow&style=social)](https://twitter.com/estebmaister)
 
-Created from the FCC repository, to compile the lessons about node and express.
+Created from the [FCC](https://freecodecamp.com) repository, to compile the lessons about node and express.
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F31OD9K)
 
 Start with an empty repository and making the git init as follows:
 
 ```git
-echo # boilerplate-express >> README.md
 git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/Estebmaister/boilerplate-express.git
-git push -u origin master
+git clone https://github.com/Estebmaister/boilerplate-express.git
 ```
 
 Adding the files from the original repo in FCC and start to coding.
@@ -35,6 +31,21 @@ node server.js
 
 ## Challenges
 
+### Table of Contents
+
+1. [Meet the Node console](#1-meet-the-node-console)
+1. [Start a Working Express Server](#2-start-a-working-express-server)
+1. [Serve an HTML File](#3-serve-an-html-file)
+1. [Serve Static Assets](#4-serve-static-assets)
+1. [Serve JSON on a Specific Route](#5-serve-json-on-a-specific-route)
+1. [Use the .env File](#6-use-the-env-file)
+1. [Implement a Root-Level Request Logger Middleware](#7-implement-a-root-level-request-logger-middleware)
+1. [Chain Middleware to Create a Time Server](#8-chain-middleware-to-Create-a-time-server)
+1. [Get Route Parameter Input from the Client](#9-get-route-parameter-input-from-the-client)
+1. [Get Query Parameter Input from the Client](#10-get-query-parameter-input-from-the-client)
+1. [Use body-parser to Parse POST Requests](#11-use-body-parser-to-parse-post-requests)
+1. [Get Data from POST Requests](#12-get-data-from-post-requests)
+
 ### 1. Meet the Node console
 
 During the development process, it is important to be able to check what’s going on in your code. Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see the console output in a terminal. On Glitch you can open the logs in the lower part of the screen. You can toggle the log panel with the button ‘Logs’ (lower-left, inside the tools menu).
@@ -42,6 +53,8 @@ During the development process, it is important to be able to check what’s goi
 We recommend to keep the log panel open while working at these challenges. By reading the logs, you can be aware of the nature of errors that may occur.
 
 - Added `console.log("Hello World")` to myApp.js.
+
+**[⬆ back to top](#table-of-contents)**
 
 ### 2. Start a Working Express Server
 
@@ -61,6 +74,8 @@ will serve the string 'Response String'.
 
 - Added `app.get("/", function(req, res) {res.send('Hello Express');})` to myApp.js.
 
+**[⬆ back to top](#table-of-contents)**
+
 ### 3. Serve an HTML File
 
 You can respond to requests with a file using the `res.sendFile(path)` method. You can put it inside the `app.get('/', ...)` route handler. Behind the scenes, this method will set the appropriate headers to instruct your browser on how to handle the file you want to send, according to its type. Then it will read and send the file. This method needs an absolute file path. We recommend you to use the Node global variable `\_\_dirname` to calculate the path like this:
@@ -71,11 +86,15 @@ absolutePath = __dirname + relativePath / file.ext;
 
 - Changed handler `app.get("/", function(req, res) {res.sendFile(__dirname + "/views/index.html");})` in myApp.js.
 
+**[⬆ back to top](#table-of-contents)**
+
 ### 4. Serve Static Assets
 
 An HTML server usually has one or more directories that are accessible by the user. You can place there the static assets needed by your application (stylesheets, scripts, images). In Express, you can put in place this functionality using the middleware `express.static(path)`, where the `path` parameter is the absolute path of the folder containing the assets. If you don’t know what middleware is... don’t worry, we will discuss in detail later. Basically, middleware are functions that intercept route handlers, adding some kind of information. A middleware needs to be mounted using the method `app.use(path, middlewareFunction)`. The first `path` argument is optional. If you don’t pass it, the middleware will be executed for all requests.
 
 - Added `app.use("/",express.static(__dirname + "/public" ))` to myApp.js.
+
+**[⬆ back to top](#table-of-contents)**
 
 ### 5. Serve JSON on a Specific Route
 
@@ -84,6 +103,8 @@ While an HTML server serves (you guessed it!) HTML, an API serves data. A REST (
 Let's create a simple API by creating a route that responds with JSON at the path `/json`. You can do it as usual, with the `app.get()` method. Inside the route handler, use the method `res.json()`, passing in an object as an argument. This method closes the request-response loop, returning the data. Behind the scenes, it converts a valid JavaScript object into a string, then sets the appropriate headers to tell your browser that you are serving JSON, and sends the data back. A valid object has the usual structure `{key: data}`. `data` can be a number, a string, a nested object or an array. `data` can also be a variable or the result of a function call, in which case it will be evaluated before being converted into a string.
 
 - Added `app.get("/json", function(req, res) {res.json({ "message": "Hello json" }); });` to myApp.js.
+
+**[⬆ back to top](#table-of-contents)**
 
 ### 6. Use the .env File
 
@@ -113,6 +134,8 @@ For Linux Mac or Windows after install **cross-env**, or `npx node-env-run serve
 
 Another possible choice is **dotenv** with an extra line the code: `require('dotenv').config();` at the top of your `js` for load all the variables in `.env`.
 
+**[⬆ back to top](#table-of-contents)**
+
 ### 7. Implement a Root-Level Request Logger Middleware
 
 Earlier, you were introduced to the `express.static()` middleware function. Now it’s time to see what middleware is, in more detail. Middleware functions are functions that take 3 arguments: the request object, the response object, and the next function in the application’s request-response cycle. These functions execute some code that can have side effects on the app, and usually add information to the request or response objects. They can also end the cycle by sending a response when some condition is met. If they don’t send the response when they are done, they start the execution of the next function in the stack. This triggers calling the 3rd argument, `next()`.
@@ -137,6 +160,8 @@ app.use("/", function (req, res, next) {
   next();
 });
 ```
+
+**[⬆ back to top](#table-of-contents)**
 
 ### 8. Chain Middleware to Create a Time Server
 
@@ -174,6 +199,8 @@ app.get(
 );
 ```
 
+**[⬆ back to top](#table-of-contents)**
+
 ### 9. Get Route Parameter Input from the Client
 
 When building an API, we have to allow users to communicate to us what they want to get from our service. For example, if the client is requesting information about a user stored in the database, they need a way to let us know which user they're interested in. One possible way to achieve this result is by using route parameters. Route parameters are named segments of the URL, delimited by slashes (/). Each segment captures the value of the part of the URL which matches its position. The captured values can be found in the `req.params` object.
@@ -189,6 +216,8 @@ req.params: {userId: '546', bookId: '6754'}
 ```node
 app.get("/:word/echo", (req, res) => res.json({ echo: req.params.word }));
 ```
+
+**[⬆ back to top](#table-of-contents)**
 
 ### 10. Get Query Parameter Input from the Client
 
@@ -208,6 +237,8 @@ app
   .get((req, res) => res.json({ name: `${req.query.first} ${req.query.last}` }))
   .post();
 ```
+
+**[⬆ back to top](#table-of-contents)**
 
 ### 11. Use body-parser to Parse POST Requests
 
@@ -229,3 +260,31 @@ As you can see, the body is encoded like the query string. This is the default f
 - Installed `body-parser` module in `package.json`.
 - Added `const bodyParser = require("body-parser")` to the top of myApp.js file.
 - Added the following code to myApp.js: `app.use(bodyParser.urlencoded({ extended: false }));`
+
+**[⬆ back to top](#table-of-contents)**
+
+### 12. Get Data from POST Requests
+
+Mount a POST handler at the path `/name`. It’s the same path as before. We have prepared a form in the html frontpage. It will submit the same data of exercise 10 (Query string). If the body-parser is configured correctly, you should find the parameters in the object `req.body`. Have a look at the usual library example:
+
+```node
+route: POST '/library'
+urlencoded_body: userId=546&bookId=6754
+req.body: {userId: '546', bookId: '6754'}
+```
+
+Respond with the same JSON object as before: `{name: 'firstname lastname'}`. Test if your endpoint works using the html form we provided in the app frontpage.
+
+Tip: There are several other http methods other than GET and POST. And by convention there is a correspondence between the http verb, and the operation you are going to execute on the server. The conventional mapping is:
+
+POST (sometimes PUT) - Create a new resource using the information sent with the request,
+
+GET - Read an existing resource without modifying it,
+
+PUT or PATCH (sometimes POST) - Update a resource using the data sent,
+
+DELETE => Delete a resource.
+
+There are also a couple of other methods which are used to negotiate a connection with the server. Except from GET, all the other methods listed above can have a payload (i.e. the data into the request body). The body-parser middleware works with these methods as well.
+
+**[⬆ back to top](#table-of-contents)**
