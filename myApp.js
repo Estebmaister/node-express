@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 /** 1) Meet the node console. */
 
-console.log("Hello World");
+console.log("Hello console");
 
 /** 2) A first working Express Server */
 // app.METHOD(PATH, HANDLER)
@@ -31,8 +31,6 @@ console.log("Hello World");
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
-
-/** 4) Serve static assets  */
 
 app.use("/", express.static(__dirname + "/public"));
 
