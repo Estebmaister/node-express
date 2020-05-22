@@ -1,7 +1,7 @@
 # Backend Challenges Boilerplate - Basic Express
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/estebmaister/boilerplate-express?color=blue&style=plastic&logo=github) ![GitHub package.json dependency version express](https://img.shields.io/github/package-json/dependency-version/estebmaister/boilerplate-express/express?style=plastic&logo=express) ![License](https://img.shields.io/github/license/estebmaister/boilerplate-express?style=plastic) [![Twitter Follow](https://img.shields.io/twitter/follow/estebmaister?label=Follow&style=social)](https://twitter.com/estebmaister)
-
+![GitHub package.json version][gh-pack-json-v] ![GitHub package.json dependency version express][gh-pack-json-dep-v-express] ![Last commit][last-commit-bdg] [![Website][website-bdg]][website] [![MIT License][license-bdg]][license] [![Twitter Follow][twitter-bdg]][twitter]
+[![Workflow badge][workflow-bdg]][glitch-workflow] [![PRs Welcome][prs-bdg]][prs-site]
 Created from the [FCC](https://freecodecamp.com) repository, to compile the lessons about node and express.
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F31OD9K)
@@ -288,3 +288,31 @@ DELETE => Delete a resource.
 There are also a couple of other methods which are used to negotiate a connection with the server. Except from GET, all the other methods listed above can have a payload (i.e. the data into the request body). The body-parser middleware works with these methods as well.
 
 **[⬆ back to top](#table-of-contents)**
+
+<!-- General links -->
+
+[changelog]: ./CHANGELOG.md
+[version-bdg]: https://img.shields.io/badge/version-1.0.0-blue.svg?style=plastic
+[license]: ./LICENSE
+[prs-bdg]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat
+[prs-site]: (https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
+[twitter]: https://twitter.com/estebmaister
+[twitter-bdg]: https://img.shields.io/twitter/follow/estebmaister?label=Follow&style=social
+
+<!-- Repo badges links -->
+
+[license-bdg]: https://img.shields.io/github/license/estebmaister/boilerplate-express?style=plastic
+[last-commit-bdg]: https://img.shields.io/github/last-commit/estebmaister/boilerplate-express?style=plastic&logo=git&logoColor=white
+[language-count-bdg]: https://img.shields.io/github/languages/count/estebmaister/boilerplate-express?style=plastic&logo=visual-studio-code
+[top-language-bdg]: https://img.shields.io/github/languages/top/estebmaister/boilerplate-express?style=plastic&logo=freecodecamp
+[repo-size-bdg]: https://img.shields.io/github/repo-size/estebmaister/boilerplate-express?style=plastic
+[code-size-bdg]: https://img.shields.io/github/languages/code-size/estebmaister/boilerplate-express?style=plastic
+[gh-pack-json-v]: https://img.shields.io/github/package-json/v/estebmaister/boilerplate-express?color=blue&style=plastic&logo=github
+[gh-pack-json-dep-v-express]: https://img.shields.io/github/package-json/dependency-version/estebmaister/boilerplate-express/express?style=plastic&logo=express
+
+<!-- Glitch web and workflow -->
+
+[website]: https://node-esteb.glitch.me
+[website-bdg]: https://img.shields.io/website?down_color=violet&down_message=sleeping&label=servidor&logo=glitch&logoColor=white&style=plastic&up_color=green&up_message=online&url=https%3A%2F%2Fnode-esteb.glitch.me
+[workflow-bdg]: https://github.com/estebmaister/boilerplate-express/workflows/Glitch%20Sync/badge.svg
+[glitch-workflow]: https://github.com/Estebmaister/boilerplate-express/blob/master/.github/workflows/main.yml
