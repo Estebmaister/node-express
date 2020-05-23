@@ -215,14 +215,20 @@ input:focus {
   height: calc(75 * var(--unit));
 }
 .cat .pupil {
-  fill: rgb(9, 92, 247);
   fill: var(--color-primary);
+  fill: rgb(60, 119, 230);
+  fill: #090909;
 }
 .cat .inner-pupil {
   fill: #000;
 }
+.cat .outer-pupil-body {
+  fill: transparent;
+  stroke: #090909;
+}
 .cat .outer-pupil {
-  fill: var(--color-contrast);
+  fill: var(--color-primary);
+  fill: rgb(143, 222, 253);
 }
 .cat .body-cat {
   fill: #090909;
