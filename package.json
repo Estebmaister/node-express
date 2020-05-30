@@ -21,7 +21,7 @@
     "url": "git+https://github.com/Estebmaister/boilerplate-express.git"
   },
   "author": "Esteban Camargo",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Estebmaister/boilerplate-express/issues"
   },
