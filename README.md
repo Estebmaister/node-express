@@ -1,4 +1,4 @@
-# Backend Challenges Boilerplate - Basic Express
+# Node Server - Basic Express for challenges in FCC
 
 ![GitHub package.json version][gh-pack-json-v] ![GitHub package.json dependency version express][gh-pack-json-dep-v-express] ![Last commit][last-commit-bdg] [![Website][website-bdg]][website] [![MIT License][license-bdg]][license] [![Twitter Follow][twitter-bdg]][twitter]
 [![Workflow badge][workflow-bdg]][glitch-workflow] [![PRs Welcome][prs-bdg]][prs-site]
@@ -10,7 +10,7 @@ Start with an empty repository and making the git init as follows:
 
 ```git
 git init
-git clone https://github.com/Estebmaister/boilerplate-express.git
+git clone https://github.com/Estebmaister/node-express.git
 ```
 
 Adding the files from the original repo in FCC and start to coding.
@@ -301,18 +301,18 @@ There are also a couple of other methods which are used to negotiate a connectio
 
 <!-- Repo badges links -->
 
-[license-bdg]: https://img.shields.io/github/license/estebmaister/boilerplate-express?style=plastic
-[last-commit-bdg]: https://img.shields.io/github/last-commit/estebmaister/boilerplate-express?style=plastic&logo=git&logoColor=white
-[language-count-bdg]: https://img.shields.io/github/languages/count/estebmaister/boilerplate-express?style=plastic&logo=visual-studio-code
-[top-language-bdg]: https://img.shields.io/github/languages/top/estebmaister/boilerplate-express?style=plastic&logo=freecodecamp
-[repo-size-bdg]: https://img.shields.io/github/repo-size/estebmaister/boilerplate-express?style=plastic
-[code-size-bdg]: https://img.shields.io/github/languages/code-size/estebmaister/boilerplate-express?style=plastic
-[gh-pack-json-v]: https://img.shields.io/github/package-json/v/estebmaister/boilerplate-express?color=blue&style=plastic&logo=github
-[gh-pack-json-dep-v-express]: https://img.shields.io/github/package-json/dependency-version/estebmaister/boilerplate-express/express?style=plastic&logo=express
+[license-bdg]: https://img.shields.io/github/license/estebmaister/node-express?style=plastic
+[last-commit-bdg]: https://img.shields.io/github/last-commit/estebmaister/node-express?style=plastic&logo=git&logoColor=white
+[language-count-bdg]: https://img.shields.io/github/languages/count/estebmaister/node-express?style=plastic&logo=visual-studio-code
+[top-language-bdg]: https://img.shields.io/github/languages/top/estebmaister/node-express?style=plastic&logo=freecodecamp
+[repo-size-bdg]: https://img.shields.io/github/repo-size/estebmaister/node-express?style=plastic
+[code-size-bdg]: https://img.shields.io/github/languages/code-size/estebmaister/node-express?style=plastic
+[gh-pack-json-v]: https://img.shields.io/github/package-json/v/estebmaister/node-express?color=blue&style=plastic&logo=github
+[gh-pack-json-dep-v-express]: https://img.shields.io/github/package-json/dependency-version/estebmaister/node-express/express?style=plastic&logo=express
 
 <!-- Glitch web and workflow -->
 
 [website]: https://node-esteb.glitch.me
 [website-bdg]: https://img.shields.io/website?down_color=violet&down_message=sleeping&label=servidor&logo=glitch&logoColor=white&style=plastic&up_color=green&up_message=online&url=https%3A%2F%2Fnode-esteb.glitch.me
-[workflow-bdg]: https://github.com/estebmaister/boilerplate-express/workflows/Glitch%20Sync/badge.svg
-[glitch-workflow]: https://github.com/Estebmaister/boilerplate-express/blob/master/.github/workflows/main.yml
+[workflow-bdg]: https://github.com/estebmaister/node-express/workflows/Glitch%20Sync/badge.svg
+[glitch-workflow]: https://github.com/Estebmaister/node-express/blob/master/.github/workflows/main.yml
