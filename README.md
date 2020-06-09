@@ -19,13 +19,13 @@ Adding the files from the original repo in FCC and start to coding.
 
 To install all the dependencies :
 
-```npm
+```bash
 npm install
 ```
 
 To run the server
 
-```node
+```bash
 node server.js
 ```
 
