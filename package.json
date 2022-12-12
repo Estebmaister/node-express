@@ -4,7 +4,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fcc-express-bground": "git+https://github.com/Em-Ant/fcc-express-bground-pkg.git"
   },
   "main": "server.js",
